@@ -60,6 +60,39 @@
 15. I click on the logout option in the navigation, I am signed out of the site
 16. I am idle on the site for more than a set time, I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts
 
+
+
+## Requirements:
+Use Node.js and Express.js to create a RESTful API.
+
+Use Handlebars.js as the template engine.
+
+Use MySQL and the Sequelize ORM for the database.
+
+Have both GET and POST routes for retrieving and adding new data.
+
+Use at least one new library, package, or technology that we haven’t discussed.
+
+Have a folder structure that meets the MVC paradigm.
+
+Include authentication (express-session and cookies).
+
+Protect API keys and sensitive information with environment variables.
+
+Be deployed using Heroku (with data).
+
+Have a polished UI.
+
+Be responsive.
+
+Be interactive (i.e., accept and respond to user input).
+
+Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+
+Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+
+
  ## Questions :  
  <a name="Questions"></a> 
  1. What is your Github Username? 
@@ -100,16 +133,16 @@ npm i
 
  ## Contribution :  
  <a name="License"></a> 
- Divya Krishnan
- Kato Camply
- Alekhya Vinni
- Joshua Crawford
+ Divya Krishnan,
+ Kato Camply,
+ Alekhya Vinni,
+ Joshua Crawford,
  Peter Bhagoutie
 
  ## Tests :
  <a name="Tests"></a> 
  There are no test for this app but in future we have planned to add the test with JEST.
- 
+
  ## Screenshot : 
  <a name="screenshot"></a> 
 

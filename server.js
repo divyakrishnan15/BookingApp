@@ -9,6 +9,7 @@ const routes = require('./controllers')
 const sequelize = require('./config/connection')
 const hbs=exphbs.create({})
 const PORT = process.env.PORT || 3002
+// const Flights =require('./models/flight');
 
 app.engine('handlebars',hbs.engine)
 app.set('view engine','handlebars')

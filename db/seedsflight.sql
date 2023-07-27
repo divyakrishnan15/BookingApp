@@ -2,9 +2,9 @@ use bookings_db;
 
 show tables;
 
-describe flights;
+describe Flights;
 
-INSERT INTO flights(flight_num,flight_name,origin,destination,start_time,end_time,num_of_Stops,stops)
+INSERT INTO Flights(flight_num,flight_name,origin,destination,start_time,end_time,num_of_Stops,stops)
 VALUES
 ('AC1231','AirCanada','Toronto,ON','Montreal,QC','6:00','7:00','non-stop',FALSE),
 ('AC1232','AirCanada','Toronto,ON','Quebec,QC','6:00','7:00','non-stop',FALSE),

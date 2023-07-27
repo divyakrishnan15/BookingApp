@@ -7,7 +7,7 @@ describe Flights;
 INSERT INTO Flights(flight_num,flight_name,origin,destination,start_time,end_time,num_of_Stops,stops)
 VALUES
 ('AC1231','AirCanada','Toronto,ON','Montreal,QC','6:00','7:00','non-stop',FALSE),
-('AC1232','AirCanada','Toronto,ON','Quebec,QC','6:00','7:00','non-stop',FALSE),
+('AC1232','AirCanada','Toronto,ON','Quebec,QC','7:00','9:00','non-stop',FALSE),
 ('AC1233','AirCanada','Toronto,ON','Vancouver,BC','7:00','8:00','non-stop',FALSE),
 ('AC1234','AirCanada','Montreal,QC','Quebec,QC','9:00','9:45','non-stop',FALSE),
 ('AC1235','AirCanada','Montreal,QC','TORONTO,ON','9:00','14:45','2-stops',TRUE),

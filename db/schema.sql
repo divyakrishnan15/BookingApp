@@ -12,7 +12,7 @@ CREATE TABLE Flights(
     start_time TIME NOT NULL,
     end_time TIME NOT NULL,
     num_of_Stops VARCHAR(15) NOT NULL,
-    Stops BOOLEAN
+    is_hasStops BOOLEAN
 );
 
 show DATABASES;

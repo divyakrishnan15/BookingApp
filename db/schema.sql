@@ -15,5 +15,6 @@ CREATE TABLE Flights(
     is_hasStops BOOLEAN
 );
 
+
 show DATABASES;
 show tables;

@@ -1,6 +1,7 @@
 const router=require('express').Router();
 const Flights=require('../../models/flight');
-const { DateTime } = require('luxon');
+const FlightBooking =require('../../models/flightBooking');
+// const { DateTime } = require('luxon');
 
 router.get('/findFlights',async(req,res)=>{
     try{
@@ -14,18 +15,36 @@ router.get('/findFlights',async(req,res)=>{
          exclude:['is_hasStops']
         }
     });
+    if(!FlightsData){
+        res.status(404).json({message:'please provide different origin/destination'})
+    }
         res.status(200).json(FlightsData);
     }
     catch (err){
         // If an error occurs, send an error response
         console.error('Error fetching flights:', err);
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
     });
     
 
 
-//seed the flight data
+router.post('/FlightBooking',async(req,res)=>{
+    try{
+      const Bookingdata= await FlightBooking.create({
+    Customer_name:req.body.Customer_name,
+    gender: req.body.gender,
+    DOB:req.body.DOB,
+    Phonenumber:req.body.Phonenumber,
+    Email:req.body.Email,
+    Class:req.body.Class    
+      })
+      res.json({success:true,booking:Bookingdata});
+    }
+    catch(err){
+     res.status(500).json(err);
+    }
+});
 
 
 

@@ -3,10 +3,10 @@ const sequelize = require('../config/connection');
 
 class Flights extends Model {}
 
-Project.init(
+Flights.init(
   {
     flight_num: {
-      type: DataTypes.String,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,

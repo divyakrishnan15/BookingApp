@@ -1,0 +1,68 @@
+
+{{>hotelStep payment="payment"}}
+
+<head>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+ 
+
+  <h1 class="ml-80 mt-20">Click to Pay with Card and move to the next page</h1>
+
+  <form  id="paymentForm" class="ml-80">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button ml-60"
+      data-key={{env.STRIPE_API_KEY}}
+      data-amount="1000"
+      data-name="Payment Example"
+      data-description="Example Charge"
+      data-currency="usd"
+    ></script>
+
+    <button type="submit" id="paymentBtn"
+                class="text-white ml-20 mt-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Next Step: Confimation
+    </button>
+  </form>
+
+
+<script>
+  
+    const userPaymentEle = document.querySelector('#paymentForm')
+    const emailEle = document.querySelector('#email')
+    const cardNumberEle = document.querySelector('#card_number')
+    const cardDateYearEle = document.querySelector('#cc-exp')
+    const cvvEle = document.querySelector('#cc-csc')
+    const submitButtonEle = document.querySelector('#submitButton')
+    const paymentBtnEle = document.querySelector('#paymentBtn')
+    
+
+    function hotelUserInfoForm(e){
+        e.preventDefault()
+        {{!-- console.log(' email = ',emailEle.value)
+        console.log(' cardNumber = ',cardNumberEle.value)
+        console.log(' cardDateYear = ',cardDateYearEle.value)
+        console.log(' cvv = ',cvvEle.value) --}}
+
+        const booking_ID = {{bookingId}}
+
+        fetch(`/api/hotelConfirmation/${booking_ID}`,{
+          method:"PUT",
+          body:JSON.stringify({
+            card_number:"4242 4242 4242 4242",
+            expiry_date:"10/25",
+            cvv:"555",
+            amount:700
+          }),
+          headers:{
+            "Content-Type":"appplication/json"
+          }
+        }).then((res)=>{
+          return res.json()
+        }).then((data)=>{
+          console.log(data)
+          document.location.replace(`/hotels/confirmation/${booking_ID}`)
+        })
+    }
+
+    paymentBtnEle.addEventListener('click',hotelUserInfoForm)
+</script>

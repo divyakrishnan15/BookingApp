@@ -1,8 +1,11 @@
 const router = require('express').Router()
+const homeRoutes = require('./homeRoutes')
+const hotelRoutes = require('./hotelRoutes')
+const apiRoutes = require('./api')
 
-router.get('/',(req,res)=>{
-    res.render('hotel')
-    // res.sendFile(path.join(__dirname,'/../views/layouts/index.html'))
-})
+router.use('/',homeRoutes)
+router.use('/api',apiRoutes)
+router.use('/hotels',hotelRoutes)
+
 
 module.exports=router

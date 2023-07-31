@@ -7,7 +7,8 @@
             "start_time":"DateTime.fromFormat('6:00', 'HH:mm').toFormat('HH:mm')",
             "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
             "num_of_Stops":"'non-stop'",
-            "is_hasStops":"FALSE"
+            "is_hasStops":"FALSE",
+            "price": "500.00"
 
         },
         {
@@ -18,7 +19,8 @@
             "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('9:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -29,7 +31,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -40,7 +43,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -51,7 +55,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"2-stops",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -62,7 +67,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -73,7 +79,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -84,7 +91,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -95,7 +103,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+              "price": "500.00"
 
         },
         {
@@ -106,7 +115,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -117,7 +127,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -128,7 +139,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -139,7 +151,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -150,7 +163,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -161,7 +175,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -172,7 +187,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -183,7 +199,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -194,7 +211,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -205,7 +223,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -216,7 +235,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"2-stops",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -227,7 +247,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -238,7 +259,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -249,7 +271,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -260,7 +283,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -271,7 +295,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -282,7 +307,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -293,7 +319,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -304,7 +331,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -315,7 +343,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"2-stops",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -326,7 +355,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -337,7 +367,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -348,7 +379,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -359,7 +391,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -370,7 +403,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"'non-stop'",
-             "is_hasStops":"FALSE"
+             "is_hasStops":"FALSE",
+             "price": "500.00"
 
         },
         {
@@ -381,7 +415,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         },
         {
@@ -392,7 +427,8 @@
              "start_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "end_time":"DateTime.fromFormat('7:00', 'HH:mm').toFormat('HH:mm')",
              "num_of_Stops":"1-stop",
-             "is_hasStops":"TRUE"
+             "is_hasStops":"TRUE",
+             "price": "500.00"
 
         }
 

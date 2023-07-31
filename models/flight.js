@@ -31,6 +31,10 @@ Flights.init(
       type: DataTypes.TIME,
       allowNull: false,
     },
+    price:{
+     type:DataTypes.FLOAT,
+     allowNull:false
+    },
     num_of_Stops: {
       type: DataTypes.STRING,
       allowNull: false

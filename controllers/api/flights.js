@@ -47,5 +47,26 @@ router.post('/FlightBooking',async(req,res)=>{
 });
 
 
-
+router.get('/BookedTickets',async(req,res)=>{
+    const TicketNum = req.params.ticket_num;
+try{
+    const ticketDetails=await Flights.findOne({
+       
+        include:{
+            model:FlightBooking,
+            attributes:['Customer_name','Phonenumber','Email','Class']
+        },
+        attributes:[
+            'flight_num', 'flight_name', 'start_time', 'end_time','price'
+        ]
+    })
+   if(!ticketDetails){
+    res.status(404).json({message:'No ticket exists'})
+   }
+   res.status(200).json(ticketDetails)
+}
+catch(err){
+    res.status(500).json(err)
+}
+})
 module.exports=router;

@@ -1,0 +1,178 @@
+{{!-- http://localhost:3003/hotels/list --}}
+
+
+{{>hotelStep list="list"}}
+
+
+
+<div class="flex">
+        <form id="searchHotelform" class="w-1/4 p-4 bg-gray-100">
+                <div class=" p-4 bg-gray-100">
+                        <label for="filter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Search
+                                for Hotel</label>
+                        <input type="text" name="filter" id="filter"
+                                class="bg-gray-50 w-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Search..." required="">
+
+                        <button type="submit" id="filterBtn"
+                                class="text-white m-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Search Hotel
+                        </button>
+        </form>
+</div>
+
+
+
+<div class="w-3/4 p-4 bg-white">
+<ul class="">
+        {{#each hotelListRouteValues as |hotelList|}}
+        
+                <li>
+
+                        <a href="#" class="flex flex-col md:flex-row shadow-md m-5 rounded shrink-0 relative">
+                                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                        src="/assets/{{hotelList.filename}}" alt="{{hotelList.filename}}">
+                                <div class="justify-between p-4 leading-normal">
+
+                                        <h5
+                                                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                                {{hotelList.hotel_name}}</h5>
+
+
+                                        <div>
+                                                <label class="font-bold mr-2">Description: </label>
+                                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                                        {{hotelList.description}}</p>
+                                        </div>
+
+                                        <div class="flex">
+                                                <label class="font-bold mr-2">Address: </label>
+                                                <h3> {{hotelList.country}}</h3>
+                                        </div>
+
+                                        <div class="flex">
+                                                <label class="font-bold mr-2">Price: </label>
+                                                <h3> ${{hotelList.price}}</h3>
+                                        </div>
+
+                                        {{#if hotelList.reviews}}
+                                        <div class="flex">
+                                                <label class="font-bold mr-2">Reviews: </label>
+                                                <h3>{{reviewStar hotelList.reviews}}</h3>
+                                        </div>
+                                        {{/if}}
+                                </div>
+
+                                <button class="hotelSelectBtn text-white w-20 float-right h-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-30 absolute bottom-5 right-5"
+                                        data-target={{hotelList.id}}>
+                                        select
+                                </button>
+                        </a>
+                </li>
+
+        {{/each}}
+        </ul>
+</div>
+
+
+
+
+
+<script>
+
+        const searchHotelFormEle = document.querySelector('#searchHotelform')
+        const filterEle = document.querySelector('#filter')
+        const hotelNameUI = filterEle.value
+        console.log("hotelNameUI =", hotelNameUI)
+        const filterBtnEle = document.querySelector('#filterBtn')
+
+        var hotelData = {}
+
+        const hotelSelectBtnEles = document.querySelectorAll('.hotelSelectBtn')
+
+        hotelSelectBtnEles.forEach((e) => {
+                e.addEventListener('click', selecthotel)
+        })
+
+
+
+        function selecthotel(event) {
+
+                const hotelId = (event.target.getAttribute('data-target')).trim()
+                console.log('selected hotelId 2 = ', hotelId)
+
+                fetch(`/api/hotelList/${hotelId}`, {
+                        method: "GET"
+                }).then((selectedHotelData) => {
+                        return selectedHotelData.json()
+                }).then((data) => {
+                        console.log("data = ", data)
+                        SendSelectedHotelData(data)
+
+                }).catch((err) => {
+                        console.log(err)
+                })
+
+        }
+
+        function SendSelectedHotelData(data) {
+                console.log("booking ID = ", {{ bookingId }})
+        console.log("data = ", data)
+        const booking_ID = {{ bookingId }}
+        fetch(`/api/hotelConfirmation/${booking_ID}`, {
+                method: "PUT",
+                body: JSON.stringify({
+                        "country": data.country,
+                        "description": data.description,
+                        "filename": data.filename,
+                        "hotel_name": data.hotel_name,
+                        "price": data.price,
+                        "reviews": data.reviews
+                }),
+                headers: {
+                        "Content-Type": "application/json"
+                }
+        }).then((res) => {
+                return res.json()
+        }).then((hotelListData) => {
+                document.location.replace(`/hotels/userInfo/${booking_ID}`)
+        }).catch((err) => {
+                console.log(err)
+        })
+        }
+
+
+
+
+        function searchForm(e) {
+                e.preventDefault()
+
+                {
+                        {
+                                const filterName = window.location.toString().split('=')[1]
+                                console.log("filterName = ", filterName)
+
+                                const newFilterName = (filterName.split('#'))[0]
+                                console.log("hotelNameUI 1=", newFilterName)
+                        }
+                }
+
+                const HotelName = filterEle.value
+                console.log("hotelNameUI 2=", HotelName)
+
+                fetch(`api/hotelList/${HotelName}`, {
+                        method: 'GET',
+                }).then((singleHotel) => {
+                        console.log("singleHotel = ", singleHotel)
+
+                }).catch((err) => {
+                        console.log(err)
+                })
+        }
+
+
+        searchHotelform.addEventListener('submit', searchForm)
+
+
+
+</script>

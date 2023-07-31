@@ -100,7 +100,7 @@ Have a professional README (with unique name, description, technologies used, sc
  
     | Github Username  | **Email id** | **Github Repo link** | **Deployed Url** | **Contributor** |
     | --- | --- | --- | --- | --- |
-    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [Tech Blog](https://github.com/divyakrishnan15/TechBlog_mvc/) | [Tech Blog](https://divyakrishnan15.github.io/TechBlog_mvc/) | Divya Krishnan,Kato Cambly,Alekhya Vinni,Joshua Crawford,Peter Bhagoutie |
+    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [Tech Blog](https://github.com/divyakrishnan15/BookingApp/) | [Tech Blog](https://divyakrishnan15.github.io/BookingApp/) | Divya Krishnan,Kato Cambly,Alekhya Vinni,Joshua Crawford,Peter Bhagoutie |
 
  ## Installation :  
  <a name="Installation"></a> 

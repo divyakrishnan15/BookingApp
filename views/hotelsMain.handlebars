@@ -1,0 +1,252 @@
+
+{{>hotelStep main="main"}}
+
+
+
+<!---------------------------------------------------ACCOUNT INFO FORM---------------------------------------------------->
+
+
+
+
+
+
+<form id="booking-accinfo-form-main" class="booking-accinfo-form-main mt-20 ml-60 mb-6">
+    <h3 class="mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white">Booking Details:</h3>
+    <div class="grid gap-4 mb-8 sm:grid-cols-6">
+
+        <div>
+            <label for="city" class="block mb-2 text-sm font-bold text-gray-900 dark:text-white">City:</label>
+            <input type="text" name="city" id="city"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="city" required="">
+        </div>
+
+
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dateRange">
+                Date Range:
+            </label>
+            <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="dateRange" type="text" placeholder="Select date range">
+        </div>
+
+
+
+        {{!-- //Guests --}}
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="guests">
+                Guests:
+            </label>
+
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                class="text-white w-full bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">select # of guests <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 4 4 4-4" />
+                </svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-inner shadow-md w-50 dark:bg-gray-700 p-2">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200 shrink-0" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                            <button
+                                class="w-7 h-9 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded adultMinusBtn inline-block">-</button>
+                            <input class="w-20 shrink-0 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 inline-block" placeholder="Adult" type="number" id="adult"/>
+                            <button
+                                class="w-7 h-9 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded adultPlusBtn inline-block">+</button>
+                    </li>
+                    <hr class="my-1">
+                    <li>
+                            <button
+                                class="w-7 h-9 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded childMinusBtn inline-block">-</button>
+                            <input class="w-20 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 inline-block" type="number" id="children" placeholder="Children 0-18yrs"/>
+                            <button
+                                class="w-7 h-9 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded childPlusBtn inline-block">+</button>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+
+        {{!-- ///Number of Rooms --}}
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="numberOfRoomsddButton">
+                Number of Rooms:
+            </label>
+
+            <select id="numberOfRoomsddButton" class="bg-blue text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dropdown">
+                <option class="bg-gray-50 border border-gray-300 text-gray-900 hover:bg-gray-200" value="1">1</option>
+                <option class="bg-gray-50 border border-gray-300 text-gray-900 hover:bg-gray-200" value="2">2</option>
+                <option class="bg-gray-50 border border-gray-300 text-gray-900 hover:bg-gray-200" value="3">3</option>
+                <option class="bg-gray-50 border border-gray-300 text-gray-900 hover:bg-gray-200" value="4">4</option>
+                <option class="bg-gray-50 border border-gray-300 text-gray-900 hover:bg-gray-200 " value="5">5</option>
+            </select>
+
+
+        </div>
+
+
+
+    </div>
+
+    {{!-- {{#if user_session_data}} --}}
+    <button type="submit"
+        class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hotel-main-btn">
+        Next Step: Choose Your Hotel
+    </button>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+
+    
+    {{!-- const dateEle = document.querySelector('#dateRange')
+    const startDate = selectedDates[0].toISOString().split('T')[0];
+    const endDate = selectedDates[1].toISOString().split('T')[0];
+
+    function daterange(selectedDates, dateStr, instance) {
+        const startDate = selectedDates[0].toISOString().split('T')[0];
+        const endDate = selectedDates[1].toISOString().split('T')[0];
+        console.log('Start Date:', startDate);
+        console.log('End Date:', endDate);
+    }
+
+    dateEle.addEventListener('beforeunload', () => daterange(selectedDates, dateStr, instance)) --}}
+
+
+
+
+    const cityEle = document.querySelector('#city')
+    const dateRangeEle = document.querySelector('#dateRange')
+
+    const adultMinusBtnEle = document.querySelector('.adultMinusBtn')
+    const adultEle = document.querySelector('#adult')
+    const adultPlusBtnEle = document.querySelector('.adultPlusBtn')
+    const childMinusBtnEle = document.querySelector('.childMinusBtn')
+    const childrenEle = document.querySelector('#children')
+    const childPlusBtnEle = document.querySelector('.childPlusBtn')
+
+    const numberOfRoomsddButtonEle = document.querySelector('#numberOfRoomsddButton')
+    const dropdown2Ele = document.querySelector('#dropdown2')
+
+
+    adultPlusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        adultEle.value =+ (adultEle.value)+1
+    })
+
+
+    adultMinusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        console.log("Adult minus(-) = ")
+        adultEle.value =+ (adultEle.value) -1
+    })
+
+
+    childPlusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        childrenEle.value =+ (childrenEle.value)+1
+    })
+
+
+    childMinusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        console.log("Child minus(-) = ")
+        childrenEle.value =+ (childrenEle.value) -1
+    })
+
+
+
+
+    const mainFormEle = document.querySelector('#booking-accinfo-form-main')
+
+
+
+    function hotelMainPageSubmit(e){
+        e.preventDefault()
+
+        const City = cityEle.value
+        console.log("City = ",City)
+
+        const num_of_adult = adultEle.value
+        console.log("num_of_adult = ",num_of_adult)
+
+        const num_of_children =childrenEle.value
+        console.log("num_of_children = ",num_of_children)
+
+        const start_date = (dateRangeEle.value.split('to')[0]).trim()
+        console.log("start_date = ",start_date)
+
+        
+        const end_date = (dateRangeEle.value.split('to')[1]).trim()
+        console.log("end_date = ",end_date)
+
+        const num_of_rooms = numberOfRoomsddButtonEle.value
+        console.log("numOfRooms = ",num_of_rooms)
+
+        const userid = "{{user_session_data.user_id}}"
+        console.log("userid = ",userid)
+
+
+    fetch('/api/hotelConfirmation',{
+        method:'POST',
+        body:JSON.stringify({
+            "city": City,
+            "country": "Canada",
+            "start_date": start_date,
+            "end_date": end_date,
+            "num_of_adults": num_of_adult,
+            "num_of_children": num_of_children,
+            "num_of_rooms": num_of_rooms,
+            "user_id":userid
+        }),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }).then((res)=>{
+        return res.json()
+    })
+    .then((hotelsMainData)=>{
+        console.log("add POst hotelsMainData = ", hotelsMainData)
+        document.location.replace(`/hotels/list/${hotelsMainData.id}`)
+    }).catch((err) => {
+        console.log(err)
+    })
+
+        
+
+    }
+
+    mainFormEle.addEventListener('submit',hotelMainPageSubmit)
+
+
+
+
+
+
+    // Initialize Flatpickr
+    flatpickr('#dateRange', {
+        mode: 'range',
+        dateFormat: 'Y-m-d',
+        onClose: function (selectedDates, dateStr, instance) {
+            const startDate = selectedDates[0].toISOString().split('T')[0];
+            const endDate = selectedDates[1].toISOString().split('T')[0];
+            // You can use startDate and endDate here or perform other operations
+            console.log('Start Date:', startDate);
+            console.log('End Date:', endDate);
+        }
+    });
+
+
+
+
+
+
+</script>

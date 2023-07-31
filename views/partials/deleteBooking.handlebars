@@ -1,0 +1,72 @@
+<h2 id="accordion-color-heading-{{hotelOrder.id}}">
+        <button type="button"
+            class="items-center w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200  focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 rounded"
+            data-accordion-target="#accordion-color-body-{{hotelOrder.id}}" aria-expanded="true"
+            aria-controls="accordion-color-body-{{hotelOrder.id}}">
+            <span>Hotel {{hotelOrder.hotel_name}} in {{hotelOrder.city}}, {{hotelOrder.country}}</span>
+            <span class="me-3 flex inline-flex float-right"> 
+
+
+{{!-- <a href="/dashboard/delete/{{hotelOrder.id}}"  --}}
+                <div class="text-decoration-none ml-2">
+                    <div class="float-right userPostDelete d-inline-block" data-target={{hotelOrder.id}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.45em" class="userPostDeleteBtn"
+                            viewBox="0 0 448 512" data-target={{hotelOrder.id}}>
+                            <style>
+                                .userPostDeleteBtn {
+                                    fill: #e22012
+                                }
+                            </style>
+                            <path
+                                d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" />
+                        </svg>
+                    </div>
+                </div>
+
+
+            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0 ml-7" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5 5 1 1 5" />
+            </svg>
+            </span>
+        </button>
+    </h2>
+    <div id="accordion-color-body-{{hotelOrder.id}}" class="hidden"
+        aria-labelledby="accordion-color-heading-{{hotelOrder.id}}">
+        <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 rounded-lg">
+            
+            {{>hotelBookingDetails}}
+             <a href="/docs/getting-started/introduction/"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> 
+        </div>
+    </div> 
+
+
+
+
+<script>
+
+const hotelBookingDelBtnEle = document.querySelector('.userPostDeleteBtn')
+
+const HotelBookingId ={{id}}
+
+
+
+const delHotelBooking = (e)=>{
+ console.log("delete id = ",HotelBookingId)
+    fetch(`/api/hotelConfirmation/${HotelBooking}`,{
+        method:"DELETE"
+    }).then((delHotelConfirmation)=>{
+        console.log(`Hotel Booking id : ${HotelBookingId} is deleted`)
+    }).catch((err)=>{
+        console.log(err)
+    })
+}
+
+
+hotelBookingDelBtnEle.addEventListener('click',delHotelBooking)
+
+
+
+</script>

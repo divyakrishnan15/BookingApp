@@ -1,0 +1,73 @@
+<form id="TicketInfo" class="text-white shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-image" >
+    <label class="block text-white  font-bold mb-2" for="name">
+      Name:
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="text" name="name" placeholder="Name" id="name" required>
+
+    <label class="block text-white  font-bold mb-2">
+      Gender:
+    </label>
+    <div class="mb-2">
+    <select name="type" class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" required>
+      
+      <option value="male">Male</option>
+      <option value="Female">Female</option>
+      <option value="others">Others</option>
+    </select>
+    </div>
+
+    <label class="block text-white  font-bold mb-2" for="DOB">
+      DOB:
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="date" name="dob" id="DOB" required>
+
+    <label class="block text-white  font-bold mb-2" for="mobno">
+      Mobile No:
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="tel" name="mobno" id="mobno" required>
+
+    <label class="blocktext-white  font-bold mb-2" for="email">
+      Email:
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" type="email" name="email" id="eml" required>
+
+    <label class="block text-white  font-bold mb-2" for="type">
+      Class:
+    </label>
+    <select name="type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" required>
+      <option value="Economy">Economy</option>
+      <option value="Business">Business</option>
+    </select>
+    <div>
+
+    </div>
+
+    <div class="flex items-center justify-between">
+        <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="submit" value="Submit">
+    </div>
+</form>
+<h1 class="text-gray-700 font-bold justify-between">PAY HERE</h1>
+   <form id="PaymentInfo" class="text-gray-700 shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-image"> 
+    <div class="mb-4">
+    <label for="card_number" class="block text-gray-700 text-sm font-bold mb-2">Card Number</label>
+    <input type="text" id="card_number" name="card_number" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  
+  <div class="mb-4">
+    <label for="card_name" class="block text-gray-700 text-sm font-bold mb-2">Cardholder Name</label>
+    <input type="text" id="card_name" name="card_name" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  
+  <div class="mb-4">
+    <label for="expiration_date" class="block text-gray-700 text-sm font-bold mb-2">Expiration Date</label>
+    <input type="text" id="expiration_date" name="expiration_date" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  
+  <div class="mb-4">
+    <label for="cvv" class="block text-gray-700 text-sm font-bold mb-2">CVV</label>
+    <input type="text" id="cvv" name="cvv" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  </div>
+  
+  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Pay Now</button>
+  
+    </form>

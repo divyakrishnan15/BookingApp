@@ -1,0 +1,38 @@
+<div class="grid grid-cols-1 gap-x-20">
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Booking ID: {{id}}</h2>
+        <div class="col-span-2">
+            <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
+                <div class="font-bold text-xl text-gray-800 leading-none mb-5">Restaurant Information:</div>
+                <div class="flex">
+                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                                        src="/assets/{{filename}}" alt="{{filename}}">
+                    <div class="font-bold text-2xl leading-none ml-3">{{restaurant_name}} </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-5">
+            <div class="col-span-2">
+                <div class="p-4 bg-green-100 rounded-xl">
+                    <div class="userPostUpdate d-inline-block">
+                        <span class="me-3 flex inline-flex float-right">
+                    </div>
+
+                    <div class="font-bold text-xl text-gray-800 leading-none mb-5">Booking Information:</div>
+                    <div><span class="mt-5 font-bold text-m">Date : </span><span>{{date}}</span></div>
+                    <div><span class="mt-5 font-bold text-m">Number of Guests : </span><span>{{num_of_guests}}</span></div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
+                <div class="font-bold text-xl text-gray-800 leading-none mb-5">Guest Information:</div>
+                {{!-- <div class="font-bold text-2xl leading-none">{{first_name}}</div> --}}
+                <div><span class="mt-5 font-bold text-m">Guest First Name : </span><span>{{first_name}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Guest Last Name : </span><span>{{last_name}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Email : </span><span>{{email}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Phone Number : </span><span>{{phone_number}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>

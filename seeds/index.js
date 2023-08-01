@@ -1,21 +1,7 @@
 const sequelize = require("../config/connection")
 const {User, HotelConfirmation} = require("../models")
+const {User, restaurantConfirmation} = require("../models")
 
-// const users = [
-//     {
-//         username: "divya",
-//         password: ""
-//     },
-//     {
-//         username: "krish",
-//         password: ""
-//     },
-//     {
-//         username: "sush",
-//         password: ""
-//     },
-
-// ]
 
 const hotelConfirmation = [
     {
@@ -52,7 +38,27 @@ const hotelConfirmation = [
 	},
 ]
 
-
+const RestaurantConfirmation = [
+    {
+        "city": "Alberta",
+        "date": "2023-07-27",
+        "num_of_guests": 5,
+        "user_id":1
+    },
+    {
+		"city": "Vancouver",
+		"date": "2023-07-01",
+		"num_of_adults": 7,
+		"restaurant_name": "Hawksworth",
+		"reviews": 21,
+		"description": "inventive pacific northwest cuisine",
+		"first_name": "Divya",
+		"last_name": "Krishnan",
+		"email": "divya@gmail.com",
+		"phone_number": 417302894,
+		"user_id": 5
+	},
+]
 
 const seedData = async ()=>{
     try{
@@ -61,10 +67,12 @@ const seedData = async ()=>{
             individualHooks:true
         });
         await HotelConfirmation.bulkCreate(hotelConfirmation);
+        await restaurantConfirmation.bulkCreate(RestaurantConfirmation);
         process.exit(0);
     } catch(err){
         console.log(err)
     }
 }
+
 
 seedData()

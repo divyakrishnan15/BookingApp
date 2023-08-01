@@ -4,6 +4,10 @@ const HotelBookingUser = require('./HotelBookingUser')
 const HotelPayment = require('./HotelPayment')
 const HotelConfirmation = require('./HotelConfirmation')
 const User = require('./User')
+const restaurantBookingInfo = require('./restaurantBookingInfo')
+const restaurantBookingUser = require('./restaurantBookingUser')
+const restaurantConfirmation = require('./restaurantBookingUser')
+const restaurantList = require('./restaurantList')
 
 
 HotelConfirmation.belongsTo(User,{
@@ -18,6 +22,16 @@ User.hasMany(HotelConfirmation, {
 });
 
 
+restaurantConfirmation.belongsTo(User,{
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+})
+User.hasMany(restaurantConfirmation, {
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+});
 
 
 HotelBookingInfo.belongsTo(User,{
@@ -32,6 +46,16 @@ User.hasMany(HotelBookingInfo, {
 });
 
 
+restaurantBookingInfo.belongsTo(User,{
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+})
+User.hasMany(restaurantBookingInfo, {
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+});
 
 
 HotelList.belongsTo(User,{
@@ -46,6 +70,16 @@ User.hasMany(HotelList, {
 });
 
 
+restaurantList.belongsTo(User,{
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+})
+User.hasMany(restaurantList, {
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+});
 
 
 HotelBookingUser.belongsTo(User,{
@@ -60,6 +94,16 @@ User.hasMany(HotelBookingUser, {
 });
 
 
+restaurantBookingUser.belongsTo(User,{
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+})
+User.hasMany(restaurantBookingUser, {
+    foreignKey: 'user_id',
+    onDelete:'SET NULL',
+    onUpdate:'CASCADE'
+});
 
 
 HotelPayment.belongsTo(User,{
@@ -74,6 +118,6 @@ User.hasMany(HotelPayment, {
 });
 
 
-module.exports = {HotelBookingInfo,HotelList,HotelBookingUser,HotelPayment,HotelConfirmation,User}
+module.exports = {HotelBookingInfo,HotelList,HotelBookingUser,HotelPayment,HotelConfirmation,User,restaurantBookingInfo,restaurantBookingUser,restaurantConfirmation,restaurantList}
 
 

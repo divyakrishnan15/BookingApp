@@ -1,0 +1,146 @@
+
+{{>restaurantStep main="main"}}
+
+<!---------------------------------------------------ACCOUNT INFO FORM---------------------------------------------------->
+
+
+<form id="booking-accinfo-form-main" class="booking-accinfo-form-main mt-20 ml-60 mb-6">
+    <h3 class="mb-4 text-lg font-medium leading-none text-gray-900 dark:text-white">Booking Details:</h3>
+    <div class="grid gap-4 mb-8 sm:grid-cols-6">
+
+        <div>
+            <label for="city" class="block mb-2 text-sm font-bold text-gray-900 dark:text-white">City:</label>
+            <input type="text" name="city" id="city"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="city" required="">
+        </div>
+
+
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+                Date:
+            </label>
+            <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="date" type="text" placeholder="Select date">
+        </div>
+
+
+        <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="guests">
+                Guests:
+            </label>
+
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                class="text-white w-full bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                type="button">select # of guests <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 4 4 4-4" />
+                </svg></button>
+
+
+            <div id="dropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-inner shadow-md w-50 dark:bg-gray-700 p-2">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200 shrink-0" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                            <button
+                                class="w-7 h-9 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded guestMinusBtn inline-block">-</button>
+                            <input class="w-20 shrink-0 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 inline-block" placeholder="Guest" type="number" id="guest"/>
+                            <button
+                                class="w-7 h-9 bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 rounded guestPlusBtn inline-block">+</button>
+                    </li>
+                    <hr class="my-1">
+                    
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <button type="submit"
+        class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 restaurant-main-btn">
+        Next Step: Choose Your Restaurant
+    </button>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+
+    const cityEle = document.querySelector('#city')
+    const dateEle = document.querySelector('#date')
+    const guestMinusBtnEle = document.querySelector('.guestMinusBtn')
+    const guestEle = document.querySelector('#guest')
+    const guestPlusBtnEle = document.querySelector('.guestPlusBtn')
+    const dropdown2Ele = document.querySelector('#dropdown2')
+
+
+    guestPlusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        adultEle.value =+ (guestEle.value)+1
+    })
+
+
+    guestMinusBtnEle.addEventListener('click',function(e){
+        e.preventDefault()
+        console.log("Guest minus(-) = ")
+        adultEle.value =+ (guestEle.value) -1
+    })
+
+
+    const mainFormEle = document.querySelector('#booking-accinfo-form-main')
+
+    function restaurantMainPageSubmit(e){
+        e.preventDefault()
+
+        const City = cityEle.value
+        console.log("City = ",City)
+
+        const num_of_guests = guestsEle.value
+        console.log("num_of_adult = ",num_of_adult)
+
+        const date = dateEle.value
+        console.log("date = ",date)
+
+        const userid = "{{user_session_data.user_id}}"
+        console.log("userid = ",userid)
+
+
+    fetch('/api/restaurantConfirmation',{
+        method:'POST',
+        body:JSON.stringify({
+            "city": City,
+            "date": date,
+            "num_of_adults": num_of_guests,
+            "user_id":userid
+        }),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }).then((res)=>{
+        return res.json()
+    })
+    .then((restaurantsMainData)=>{
+        console.log("add Post restaurantsMainData = ", restaurantsMainData)
+        document.location.replace(`/restaurants/list/${restaurantsMainData.id}`)
+    }).catch((err) => {
+        console.log(err)
+    })
+
+    }
+
+    mainFormEle.addEventListener('submit',restaurantMainPageSubmit)
+
+    // Initialize Flatpickr
+    flatpickr('#dateRange', {
+        mode: 'range',
+        dateFormat: 'Y-m-d',
+        onClose: function (selectedDates, dateStr, instance) {
+            const startDate = selectedDates[0].toISOString().split('T')[0];
+            const endDate = selectedDates[1].toISOString().split('T')[0];
+            console.log('Date:', Date);
+
+        }
+    });
+
+</script>

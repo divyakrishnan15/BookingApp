@@ -4,26 +4,11 @@ use bookings_db;
 show tables;
 
 
-
--- describe user;
--- describe HotelBookingInfo;
--- describe HotelList;
--- describe hotelbookinguser;
--- describe payment;
-
-
 INSERT INTO user(email,password) 
 VALUES('james5@gmail.com','testt12345'),
 ('alex@gmail.com','testt12345'),
 ('john@gmail.com','testt12345');
 select * from user;
-
-
--- INSERT INTO user(username,email,password) 
--- VALUES('james','james5@gmail.com','testt12345'),
--- ('alex','alex@gmail.com','testt12345'),
--- ('john','john@gmail.com','testt12345');
--- select * from user;
 
 
 INSERT INTO hotelbookinginfo(city,country,start_date,end_date,num_of_adults,num_of_children,num_of_rooms,created_at,updated_at)
@@ -66,14 +51,33 @@ VALUES("Toronto","Canada","2023-07-27","2023-07-28",2,2,1,"Hilton",500,"hilton.j
 select * from hotelConfirmation;
 
 
--- INSERT INTO hotelConfirmation(city,country,start_date,end_date,num_of_adults,num_of_children,num_of_rooms,hotel_name,price,filename,reviews,description,first_name,last_name,email,phone_number,card_number,expiry_date,cvv,amount,created_at,updated_at,user_id)
--- VALUES("Toronto","Canada","2023-07-27","2023-07-28",2,2,1,"Hilton",500,"hilton.jpg",5,"good","ABC","XYZ","abc@gmail.com",41623425,"4242424242424242","10/25","123",200.00,'2023-07-28','2023-07-29',2);
--- select * from hotelConfirmation;
-
--- INSERT INTO user(username,email,password) 
--- VALUES('james','james5@gmail.com','testt12345'),
--- ('alex','alex@gmail.com','testt12345'),
--- ('john','john@gmail.com','testt12345');
-
+INSERT INTO restaurantbookinginfo(city,date,num_of_guests,created_at,updated_at)
+VALUES('Toronto','2023-07-27',4,'2023-07-27','2023-07-28'),
+('Montreal','2023-07-28',7,'2023-07-28','2023-07-29'),
+('Quebec','2023-07-29',8,'2023-07-29','2023-07-30'),
+('Vancouver','2023-07-30',4,'2023-07-30','2023-07-31'),
+('Ottawa','2023-07-31',5,'2023-07-31','2023-08-01');
+select * from restaurantBookingInfo;
 
 
+INSERT INTO restaurantList(restaurant_name,filename,reviews,description,created_at,updated_at)
+VALUES('Alo Restaurant','Alo.webp',91,'french menu','2023-07-27','2023-07-28'),
+('Île Flottante','Flottant.jpg',35,'french dishes','2023-07-28','2023-07-29'),
+('Le Continental','Continental.jpg',57,'flambé meals','2023-07-29','2023-07-30'),
+('Hawksworth','Hawksworth.webp',21,'pacific cuisine','2023-07-30','2023-07-31'),
+('North & Navy','N&N.jpj',16,'italian menu','2023-07-31','2023-08-01');
+select * from restaurantList;
+
+
+INSERT INTO restaurantbookinguser(first_name,last_name,email,phone_number,created_at,updated_at)
+VALUES('Divya','Krishnan','divya@gmail.com',417111111,'2023-07-27','2023-07-28'),
+('Kato','krishnan','kato@gmail.com',41744444,'2023-07-28','2023-07-29'),
+('Alekhya','Vinni','alekhya@gmail.com',417555555,'2023-07-29','2023-07-30'),
+('Joshua','Crawford','joshua@gmail.com',41766666,'2023-07-30','2023-07-31'),
+('Peter','Bhat','peter@gmail.com',4177777,'2023-07-31','2023-08-01');
+select * from restaurantbookinguser;
+
+
+INSERT INTO restaurantConfirmation(city,date,num_of_guests,restaurant_name,filename,reviews,description,first_name,last_name,email,phone_number,created_at,updated_at)
+VALUES("Toronto","2023-07-27",5,"Alo Restaurant","Alo.webp",21,"exellent food","Divya","Krishnan","divya@gmail.com",41623425,'2023-07-28','2023-07-29');
+select * from restaurantConfirmation;

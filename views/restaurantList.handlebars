@@ -1,0 +1,144 @@
+{{>restaurantStep list="list"}}
+
+<div class="flex">
+    <form id="searchRestaurantform" class="w-1/4 p-4 bg-gray-100">
+        <div class=" p-4 bg-gray-100">
+            <label for="filter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Search for Restaurant</label>
+                <input type="text" name="filter" id="filter"
+                        class="bg-gray-50 w-10 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Search..." required="">
+
+                <button type="submit" id="filterBtn"
+                        class="text-white m-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Search Restaurant
+                </button>
+    </form>
+</div>
+
+<div class="w-3/4 p-4 bg-white">
+<ul class="">
+    {{#each restaurantListRouteValues as |restaurantList|}}
+        <li>
+            <a href="#" class="flex flex-col md:flex-row shadow-md m-5 rounded shrink-0 relative">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                    src="/assets/{{restaurantList.filename}}" alt="{{restaurantList.filename}}">
+                        <div class="justify-between p-4 leading-normal">
+
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{restaurantList.restaurant_name}}</h5>
+
+                                <div>
+                                <label class="font-bold mr-2">Description: </label>
+                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                        {{restaurantList.description}}</p>
+                                </div>
+
+                                {{#if restaurantList.reviews}}
+                                <div class="flex">
+                                    <label class="font-bold mr-2">Reviews: </label>
+                                    <h3>{{reviewStar restaurantList.reviews}}</h3>
+                                </div>
+                                {{/if}}
+
+                        </div>
+
+                                <button class="restaurantSelectBtn text-white w-20 float-right h-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-1 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-30 absolute bottom-5 right-5"
+                                        data-target={{restaurantList.id}}>
+                                        select
+                                </button>
+            </a>
+        </li>
+        {{/each}}
+        </ul>
+</div>
+
+
+<script>
+
+        const searchRestaurantFormEle = document.querySelector('#searchRestaurantform')
+        const filterEle = document.querySelector('#filter')
+        const restaurantNameUI = filterEle.value
+        console.log("restaurantNameUI =", restaurantNameUI)
+        const filterBtnEle = document.querySelector('#filterBtn')
+
+        var restaurantData = {}
+
+        const restaurantSelectBtnEles = document.querySelectorAll('.restaurantSelectBtn')
+
+        restaurantSelectBtnEles.forEach((e) => {
+                e.addEventListener('click', selecthotel)
+        })
+
+        function selectrestaurant(event) {
+
+                const restaurantId = (event.target.getAttribute('data-target')).trim()
+                console.log('selected restaurantId 2 = ', restaurantId)
+
+                fetch(`/api/restaurantList/${restaurantId}`, {
+                        method: "GET"
+                }).then((selectedRestaurantData) => {
+                        return selectedRestaurantData.json()
+                }).then((data) => {
+                        console.log("data = ", data)
+                        SendSelectedRestaurantData(data)
+
+                }).catch((err) => {
+                        console.log(err)
+                })
+
+        }
+
+        function SendSelectedRestaurantData(data) {
+                console.log("booking ID = ", {{ bookingId }})
+        console.log("data = ", data)
+        const booking_ID = {{ bookingId }}
+        fetch(`/api/restaurantConfirmation/${booking_ID}`, {
+                method: "PUT",
+                body: JSON.stringify({
+                        "filename": data.filename,
+                        "restaurant_name": data.restaurant_name,
+                        "reviews": data.reviews
+                        "description": data.description,
+                }),
+                headers: {
+                        "Content-Type": "application/json"
+                }
+        }).then((res) => {
+                return res.json()
+        }).then((restaurantListData) => {
+                document.location.replace(`/restaurants/userInfo/${booking_ID}`)
+        }).catch((err) => {
+                console.log(err)
+        })
+        }
+
+
+    function searchForm(e) {
+            e.preventDefault()
+
+            {
+                    {
+                            const filterName = window.location.toString().split('=')[1]
+                            console.log("filterName = ", filterName)
+
+                            const newFilterName = (filterName.split('#'))[0]
+                            console.log("restaurantNameUI 1=", newFilterName)
+                        }
+                }
+
+                const restaurantName = filterEle.value
+                console.log("restaurantNameUI 2=", restaurantName)
+
+                fetch(`api/restaurantList/${restaurantName}`, {
+                        method: 'GET',
+                }).then((singleRestaurant) => {
+                        console.log("singleRestaurant = ", singleRestaurant)
+
+                }).catch((err) => {
+                        console.log(err)
+                })
+        }
+
+    searchRestaurantform.addEventListener('submit', searchForm)
+
+</script>

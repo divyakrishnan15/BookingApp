@@ -61,17 +61,17 @@
 
             <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
                 <div class="font-bold text-xl text-gray-800 leading-none">Guest Information:</div>
-                <div class="font-bold text-2xl leading-none">{{hotelconfirmationValues.first_name}}</div>
-                <div class="font-bold text-2xl leading-none">{{hotelconfirmationValues.last_name}}</div>
-                <div class="font-bold text-2xl leading-none">{{hotelconfirmationValues.email}}</div>
-                <div class="font-bold text-2xl leading-none">{{hotelconfirmationValues.phone_number}}</div>
+                <div><span class="mt-5 font-bold text-m">First Name : </span><span>{{hotelconfirmationValues.first_name}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Last Name : </span><span>{{hotelconfirmationValues.last_name}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Email : </span><span>{{hotelconfirmationValues.email}}</span></div>
+                <div><span class="mt-5 font-bold text-m">Phone Number : </span><span>{{hotelconfirmationValues.phone_number}}</span></div>
             </div>
 
 
 
             <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
                 <div class="font-bold text-xl text-gray-800 leading-none">Payment Information:</div>
-                <div class="leading-none text-2xl text-cyan-600 font-bold mt-5">card: {{card_number}}</div>
+                <div><span class="mt-5 font-bold text-m">Card Number : </span><span>{{hotelconfirmationValues.card_number}}</span></div>
                 {{!-- <div class="mt-2">{{cvv}}</div> --}}
             </div>
         </div>

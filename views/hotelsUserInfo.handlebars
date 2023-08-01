@@ -51,10 +51,20 @@
 
     function hotelUserInfoForm(e){
         e.preventDefault()
-        console.log(' firstname = ',first_nameEle.value)
+        {{!-- console.log(' firstname = ',first_nameEle.value)
         console.log(' lastname = ',last_nameEle.value)
         console.log(' email = ',emailEle.value)
-        console.log(' phonenumber = ',phonenumberEle.value)
+        console.log(' phonenumber = ',phonenumberEle.value) --}}
+
+        let first_name=first_nameEle.value.trim()
+        let last_name=last_nameEle.value.trim()
+        let email=emailEle.value.trim()
+        let phonenumber=phonenumberEle.value.trim()
+
+        console.log(' firstname = ',first_name)
+        console.log(' lastname = ',last_name)
+        console.log(' email = ',email)
+        console.log(' phonenumber = ',phonenumber)
 
         console.log("booking ID = ",{{bookingId}})
         const booking_ID = {{bookingId}}
@@ -62,11 +72,14 @@
         fetch(`/api/hotelConfirmation/${booking_ID}`,{
             method:"PUT",
             body:JSON.stringify({
-                first_name:first_nameEle.value,
-                last_name:last_nameEle.value,
-                email:emailEle.value,
-                phone_number:phonenumberEle.value
-            })
+                "first_name":first_name,
+                "last_name":last_name,
+                "email":email,
+                "phone_number":phonenumber,
+            }),
+            headers: {
+                        "Content-Type": "application/json"
+                }
         }).then((res)=>{
             return res.json()
         }).then((data)=> {

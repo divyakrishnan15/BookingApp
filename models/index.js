@@ -1,7 +1,7 @@
-const flight=require('./flight');
+const flight=require('./Flights');
 const flightBooking=require('./flightBooking');
 
-flight.hasOne(flightBooking,{
+flight.hasMany(flightBooking,{
     foreignKey:'flight_num'
 })
 

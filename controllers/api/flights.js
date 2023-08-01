@@ -1,7 +1,20 @@
 const router=require('express').Router();
-const Flights=require('../../models/flight');
+const Flights=require('../../models/Flights');
 const FlightBooking =require('../../models/flightBooking');
-// const { DateTime } = require('luxon');
+
+
+
+router.get('/', async (req, res) => {
+    // We find all dishes in the db and set the data equal to dishData
+    const FlightsData = await Flights.findAll().catch((err) => { 
+      res.json(err);
+    });
+    // We use map() to iterate over dishData and then add .get({ plain: true }) each object to serialize it. 
+    const flights = FlightsData.map((dish) => dish.get({ plain: true }));
+    // We render the template, 'all', passing in dishes, a new array of serialized objects.
+    res.render('all', { flights });
+    });
+
 
 router.get('/findFlights',async(req,res)=>{
     try{

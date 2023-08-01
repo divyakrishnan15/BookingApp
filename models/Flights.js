@@ -9,17 +9,17 @@ Flights.init(
       type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+     
     },
     flight_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Origin: {
+    origin: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    Destination: {
+    destination: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -31,24 +31,24 @@ Flights.init(
       type: DataTypes.TIME,
       allowNull: false,
     },
-    price:{
-     type:DataTypes.FLOAT,
-     allowNull:false
-    },
     num_of_Stops: {
       type: DataTypes.STRING,
       allowNull: false
     },
     is_hasStops:{
       type:DataTypes.BOOLEAN
-    }
+    },
+    price:{
+      type:DataTypes.FLOAT,
+      allowNull:false
+     },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Flights'
+    modelName: 'flights'
   }
 );
 

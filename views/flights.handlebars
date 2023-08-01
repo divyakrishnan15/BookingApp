@@ -3,35 +3,35 @@
                   <h2 class="text-2xl font-bold mb-4">Flight Booking Form</h2>
                   <div class="mb-4">
                     <label for="city" class="block text-gray-700 font-bold mb-2">Departure</label>
-                    <select id="city" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
+                    <select id="Origincity" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
                       <option value="" disabled selected>Select a city</option>
-                      <option value="Toronto">Calgary,AB</option>
-                      <option value="">Edmonton,AB</option>
-                      <option value="">Halifax,NS</option>
-                      <option value="">Montreal,QC</option>
-                      <option value="">Ottawa,ON</option>
-                      <option value="">Quebec,QC</option>
-                      <option value="">Toronto,ON</option>
-                      <option value="Ottawa">Vancouver,BC</option>
-                      <option value="">Windsor,ON</option>
-                      <option value="">Winnipeg,MB</option>
+                      <option value="Calgary,AB">Calgary,AB</option>
+                      <option value="Edmonton,AB">Edmonton,AB</option>
+                      <option value="Halifax,NS">Halifax,NS</option>
+                      <option value="Montreal,QC">Montreal,QC</option>
+                      <option value="Ottawa,ON<">Ottawa,ON</option>
+                      <option value="Quebec,QC">Quebec,QC</option>
+                      <option value="Toronto,ON">Toronto,ON</option>
+                      <option value="Vancouver,BC">Vancouver,BC</option>
+                      <option value="Windsor,ON">Windsor,ON</option>
+                      <option value="Winnipeg,MB">Winnipeg,MB</option>
                     </select>
                   </div>
                    
                   <div class="mb-4">
                     <label for="city" class="block text-gray-700 font-bold mb-2">Destination</label>
-                    <select id="city" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
+                    <select id="Dest_city" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
                       <option value="" disabled selected>Select a city</option>
-                      <option value="Toronto">Calgary,AB</option>
-                      <option value="">Edmonton,AB</option>
-                      <option value="">Halifax,NS</option>
-                      <option value="">Montreal,QC</option>
-                      <option value="">Ottawa,ON</option>
-                      <option value="">Quebec,QC</option>
-                      <option value="">Toronto,ON</option>
-                      <option value="Ottawa">Vancouver,BC</option>
-                      <option value="">Windsor,ON</option>
-                      <option value="">Winnipeg,MB</option>
+                      <option value="Calgary,AB">Calgary,AB</option>
+                      <option value="Edmonton,AB">Edmonton,AB</option>
+                      <option value="Halifax,NS">Halifax,NS</option>
+                      <option value="Montreal,QC">Montreal,QC</option>
+                      <option value="Ottawa,ON">Ottawa,ON</option>
+                      <option value="Quebec,QC">Quebec,QC</option>
+                      <option value="Toronto,ON">Toronto,ON</option>
+                      <option value="Vancouver,BC">Vancouver,BC</option>
+                      <option value="Windsor,ON">Windsor,ON</option>
+                      <option value="Winnipeg,MB">Winnipeg,MB</option>
                     </select>
                   </div>
                   <div class="mb-4">
@@ -47,12 +47,56 @@
                     <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="passengerCount" type="number" min="1" max="10">
                   </div>
                   <div class="flex items-center justify-center">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    <button id='searchBtn' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                       Search Flights
                     </button>
                   </div>
                 </div>
               </div>
 
-  <div class="displayFlights"></div>
+  <div id="displayFlights">
+     <div class="bg-white rounded-lg shadow-lg p-6">
+    <!-- Flight data card -->
+    <h2 class="text-lg font-semibold mb-4">Flight Details</h2>
+    <div class="space-y-2">
+      {{#each flightlist as |flight|}}
+      <div class="flex justify-between">
+        <span class="font-semibold">Flight No:</span>
+        <span>{{flight.flight_num}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Flight Name:</span>
+        <span>{{flight.flight_name}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">No Of Stops:</span>
+        <span>{{flight.num_of_Stops}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Origin:</span>
+        <span>{{flight.origin}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Destination:</span>
+        <span>{{flight.destination}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Departure Time:</span>
+        <span>{{flight.start_time}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Arrival Time:</span>
+        <span>{{flight.end_time}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">PRICE:</span>
+        <span>{{flight.price}}</span>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full">Book Now</button>
+    </div>
+  </div>
+
+  </div>
             

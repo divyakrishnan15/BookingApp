@@ -34,17 +34,17 @@ VALUES
 ('AN2316',"AirNorth",'Ottawa,ON','Vancouver,BC','15:00','19:54','non-stop',FALSE),
 ('AN2317',"AirNorth",'Ottawa,ON','Montreal,QC','15:00','19:54','non-stop',FALSE),
 ('AN2318',"AirNorth",'Quebec,QC','winnipeg','15:00','19:54','non-stop',FALSE),
-('AN2319',"AirNorth",'Quebec,QC','Toronto,ON','15:00','19:54','non-stop',FALSE),
+('AN2319',"AirNorth",'Quebec,QC','Toronto,ON','15:00','19:54','non-stop',FALSE)
 
-('AT3411','AirTransat','Vancouver,BC','Toronto,ON','11:00','16:55','1-stop',TRUE),
-('AT3412','AirTransat','Vancouver,BC','Montreal,BC','6:00','12:55','2-stops',TRUE),
-('AT3413','AirTransat','Vancouver,BC','Halifax,NS','7:00','16:55','1-stop',TRUE),
-('AT3414','AirTransat','Vancouver,BC','Edmonton,AB','11:00','16:55','non-stop',FALSE),
-('AT3415','AirTransat','Halifax,NS','Toronto,ON','11:00','16:55','1-stop',TRUE),
-('AT3416','AirTransat','Calgary,AB','Toronto,ON','11:00','16:55','1-stop',TRUE),
-('AT3417','AirTransat','Calgary,AB','Edmonton,AB','11:00','16:55','non-stop',FALSE),
-('AT3418','AirTransat','Calgary,AB','Vancouver,BC','11:00','16:55','1-stop',TRUE),
-('AT3419','AirTransat','Calgary,AB','Ottawa,ON','11:00','16:55','1-stop',TRUE),
+-- ('AT3411','AirTransat','Vancouver,BC','Toronto,ON','11:00','16:55','1-stop',TRUE),
+-- ('AT3412','AirTransat','Vancouver,BC','Montreal,BC','6:00','12:55','2-stops',TRUE),
+-- ('AT3413','AirTransat','Vancouver,BC','Halifax,NS','7:00','16:55','1-stop',TRUE),
+-- ('AT3414','AirTransat','Vancouver,BC','Edmonton,AB','11:00','16:55','non-stop',FALSE),
+-- ('AT3415','AirTransat','Halifax,NS','Toronto,ON','11:00','16:55','1-stop',TRUE),
+-- ('AT3416','AirTransat','Calgary,AB','Toronto,ON','11:00','16:55','1-stop',TRUE),
+-- ('AT3417','AirTransat','Calgary,AB','Edmonton,AB','11:00','16:55','non-stop',FALSE),
+-- ('AT3418','AirTransat','Calgary,AB','Vancouver,BC','11:00','16:55','1-stop',TRUE),
+-- ('AT3419','AirTransat','Calgary,AB','Ottawa,ON','11:00','16:55','1-stop',TRUE)
 ;
 
 

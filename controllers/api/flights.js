@@ -9,7 +9,7 @@ router.get('/findFlights',async(req,res)=>{
         order: ['flight_name'],
         where:{
             Origin:req.body.origin,
-            Destination:req.params.destination
+            Destination:req.body.destination
         },
         attributes:{
          exclude:['is_hasStops']
@@ -18,7 +18,9 @@ router.get('/findFlights',async(req,res)=>{
     if(!FlightsData){
         res.status(404).json({message:'please provide different origin/destination'})
     }
-        res.status(200).json(FlightsData);
+    const flightlist = FlightsData.map((flight)=>flight.get({plain:true}))
+    res.render('flights',{flightlist})
+     res.status(200).json(FlightsData);
     }
     catch (err){
         // If an error occurs, send an error response

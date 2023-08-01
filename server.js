@@ -49,9 +49,6 @@ const sess = {
   
 
 
-
-
-
 io.on('connection', (socket) => {
 	socket.on('send name', (username) => {
 		io.emit('send name', (username));
@@ -61,12 +58,6 @@ io.on('connection', (socket) => {
 		io.emit('send message', (chat));
 	});
 });
-
-  
-  
-  
-
-
 
   
   sequelize.sync({force:false}).then(()=>{

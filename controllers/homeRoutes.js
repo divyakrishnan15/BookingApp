@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const path = require('path')
-const {HotelBookingInfo,HotelList,HotelBookingUser,Payment,User,HotelConfirmation} = require('../models');
+const {HotelBookingInfo,HotelList,HotelBookingUser,Payment,User,HotelConfirmation,restaurantList,restaurantConfirmation} = require('../models');
 
 
 router.get('/',(req,res)=>{
@@ -15,6 +15,25 @@ router.get('/',(req,res)=>{
 
         const hotelListValues = hotelListData.map((post) => post.get({ plain: true }));
         res.render("homepage", {hotelListValues,user_session_data: req.session.user_session_data});
+
+  }).catch((err)=>{
+      res.status(500).json(err)
+  })
+})
+
+
+router.get('/',(req,res)=>{
+    restaurantList.findAll({
+      attributes:["restaurant_name"]
+  }).then((restaurantListData)=>{
+      if(!restaurantListData){
+          res.status(404).json({message:'No restaurant details data found'})
+          return
+      }
+
+
+        const restaurantListValues = restaurantListData.map((post) => post.get({ plain: true }));
+        res.render("homepage", {restaurantListValues,user_session_data: req.session.user_session_data});
 
   }).catch((err)=>{
       res.status(500).json(err)
@@ -45,7 +64,6 @@ router.get('/flights',(req,res)=>{
       res.status(500).json(err)
   })
 })
-
 
 
 router.get('/login',(req,res)=>{
@@ -79,9 +97,24 @@ router.get('/dashboard',(req,res)=>{
 })
 
 
+router.get('/dashboard',(req,res)=>{
+    restaurantConfirmation.findAll({
+        where:{
+            user_id:req.session.user_session_data.user_id
+        },
+        attributes:["id","city","date",	"num_of_guests","restaurant_name","filename","reviews","description","first_name","last_name","email","phone_number","user_id"]
+    }).then((bookingsRestaurantDashboardData)=>{
+        if(!bookingsRestaurantDashboardData){
+            res.status(404).json({message:'No restaurant dashboard data found'})
+            return
+        }
+      
+    const restaurantDashboardValues = bookingsRestaurantDashboardData.map((post) => post.get({ plain: true }));
+    res.render("bookingRestaurantDashboard",{restaurantDashboardValues,user_session_data:req.session.user_session_data})
 
-
-
-
+}).catch((err)=>{
+    res.status(500).json(err)
+})
+})
 
 module.exports = router;

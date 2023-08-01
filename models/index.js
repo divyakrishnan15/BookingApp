@@ -1,12 +1,12 @@
-const flight=require('./Flights');
+const Flights=require('./Flights');
 const flightBooking=require('./flightBooking');
 
-flight.hasMany(flightBooking,{
+Flights.hasMany(flightBooking,{
     foreignKey:'flight_num'
 })
 
-flightBooking.belongsTo(flight,{
+flightBooking.belongsTo(Flights,{
     foreignKey:'flight_num'
 })
 
-module.exports={flight,flightBooking}
+module.exports={Flights,flightBooking}

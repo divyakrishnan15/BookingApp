@@ -1,8 +1,13 @@
 const router = require('express').Router()
+const apiRoutes=require('./api')
+// const homeRoutes=require('./home')
 
-router.get('/',(req,res)=>{
-    res.render('flights')
-    // res.sendFile(path.join(__dirname,'/../views/layouts/index.html'))
-})
+
+router.use('/api',apiRoutes)
+// router.use('/',homeRoutes)
+
+
+
 
 module.exports=router
+

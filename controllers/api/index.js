@@ -20,7 +20,7 @@ router.use('/users',userRoutes)
 router.use('/hotelConfirmation',HotelConfirmationRoutes)
 router.use('./restaurantBookingInfoRoutes',restaurantBookingInfoRoutes)
 router.use('./restaurantBookingUserRoutes',restaurantBookingUserRoutes)
-router.userequire('./restaurantConfirmationRoutes',restaurantConfirmationRoutes)
+router.use('./restaurantConfirmationRoutes',restaurantConfirmationRoutes)
 router.use('./restaurantListRoutes',resaurantListRoutes)
 
 

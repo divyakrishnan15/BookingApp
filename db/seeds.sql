@@ -21,11 +21,11 @@ select * from HotelBookingInfo;
 
 
 INSERT INTO HotelList(hotel_name,country,price,filename,reviews,description,created_at,updated_at)
-VALUES('Hilton','Ontario',200,'hilton.jpg',4,'wifi,a/c,tv','2023-07-27','2023-07-28'),
-('Hyatt','Quebec',300,'hyatt.jpg',3,'wifi,a/c,tv','2023-07-28','2023-07-29'),
-('Marriott','Quebec',400,'mariot.jpeg',5,'wifi,a/c,tv','2023-07-29','2023-07-30'),
-('Ritz-Carlton Hotel','Canada',500,'ritz.jpg',2,'wifi,a/c,tv','2023-07-30','2023-07-31'),
-('Hollywood Plaza Hotel','Canada',600,'hollyword_plaza.jpg',1,'wifi,a/c,tv','2023-07-31','2023-08-01');
+VALUES('Hilton','145 Richmond St W, Toronto, ON M5H 2L2',200,'hilton.jpg',4,'In the entertainment district, we’re within five blocks of downtown Toronto attractions like the CN Tower, Union Station, Second City Theater, and the Rogers Center. It’s then 25 minutes to the airport.','2023-07-27','2023-07-28'),
+('Hyatt','370 King Street West, Toronto, Ontario, Canada, M5V 1J9',300,'hyatt.jpg',3,'Discover the excitement of Downtown Toronto’s Entertainment District, just steps from the business and financial district and all that makes the city a vibrant destination','2023-07-28','2023-07-29'),
+('Marriott','1 Blue Jays Way, Toronto, ON M5V 1J4',400,'mariot.jpeg',5,'Choose your getaway: From family fun to golf, Vacations by Marriott offers travel packages in all flavors.','2023-07-29','2023-07-30'),
+('Ritz-Carlton Hotel','Toronto, ON M5V 3G7',500,'ritz.jpg',2,'Experience historic cities home to time-honored traditions. Immerse yourself in cosmopolitan capitals buzzing with energy. Unwind in hidden sanctuaries rich with natural wonder. The world awaits — where will The Ritz-Carlton take you?','2023-07-30','2023-07-31'),
+('Hollywood Plaza Hotel','28 Hollywood Ave, Toronto, ON M2N 6S4',600,'hollyword_plaza.jpg',1,'Welcome to Hollywood! Located in the heart of Hollywood just steps away from Hollywood Walk of Fame, Hollywood Bowl, Graumans Chinese Theatre, Universal Studios®, and famous star-studded attractions, hot spots, and nightlife of the Sunset Strip.','2023-07-31','2023-08-01');
 select * from HotelList;
 
 

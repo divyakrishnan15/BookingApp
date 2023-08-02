@@ -29,6 +29,8 @@
   
     const userPaymentEle = document.querySelector('#paymentForm')
     const emailEle = document.querySelector('#email')
+    {{!-- var emailEle = document.getElement('email');
+    console.log(emailEle) --}}
     const cardNumberEle = document.querySelector('#card_number')
     const cardDateYearEle = document.querySelector('#cc-exp')
     const cvvEle = document.querySelector('#cc-csc')
@@ -48,14 +50,14 @@
         fetch(`/api/hotelConfirmation/${booking_ID}`,{
           method:"PUT",
           body:JSON.stringify({
-            card_number:"4242 4242 4242 4242",
-            expiry_date:"10/25",
-            cvv:"555",
-            amount:700
+            "card_number":"4242424242424242",
+            "expiry_date":"10/25",
+            "cvv":555,
+            "amount":10.00
           }),
-          headers:{
-            "Content-Type":"appplication/json"
-          }
+            headers: {
+                        "Content-Type": "application/json"
+                }
         }).then((res)=>{
           return res.json()
         }).then((data)=>{

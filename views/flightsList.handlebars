@@ -1,0 +1,56 @@
+<!--Display Flights --->
+
+<div id="displayFlights">
+    <div class="relative" style="background-image: url('../public/css/assets/airport.jpg'); background-size: 50% 100%;">
+        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+            <h1 class="text-4xl font-bold text-white">Here's The List Of Flights To Your Favourite Destination</h1>
+        </div>
+    </div>
+     <div class="bg-white rounded-lg shadow-lg p-6">
+    <!-- Flight data card -->
+    <h2 class="text-lg font-semibold mb-4">Flight Details</h2>
+    <div class="space-y-2">
+      {{#each flightlist as |flight|}}
+      <div class="flex justify-between">
+        <span class="font-semibold">Flight No:</span>
+        <span>{{flight.flight_num}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Flight Name:</span>
+        <span>{{flight.flight_name}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">No Of Stops:</span>
+        <span>{{flight.num_of_Stops}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Origin:</span>
+        <span>{{flight.origin}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Destination:</span>
+        <span>{{flight.destination}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Departure Time:</span>
+        <span>{{flight.start_time}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">Arrival Time:</span>
+        <span>{{flight.end_time}}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-semibold">PRICE:</span>
+        <span>{{flight.price}}</span>
+      </div>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full">Book Now</button>
+    </div>
+  </div>
+  </div>
+
+
+  
+
+            

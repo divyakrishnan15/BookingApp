@@ -3,20 +3,18 @@ const Flights=require('../../models/Flights');
 const FlightBooking =require('../../models/flightBooking');
 
 
+router.get ('/',async(req,res)=>{
+    try{
+        res.render('flights')
+    }
+    catch (err){
+        // If an error occurs, send an error response
+        console.error('Error fetching the form:', err);
+        res.status(500).json(err);
+    }
+})
 
-router.get('/', async (req, res) => {
-    // We find all dishes in the db and set the data equal to dishData
-    const FlightsData = await Flights.findAll().catch((err) => { 
-      res.json(err);
-    });
-    // We use map() to iterate over dishData and then add .get({ plain: true }) each object to serialize it. 
-    const flights = FlightsData.map((dish) => dish.get({ plain: true }));
-    // We render the template, 'all', passing in dishes, a new array of serialized objects.
-    res.render('all', { flights });
-    });
-
-
-router.get('/findFlights',async(req,res)=>{
+router.post('/flightsList',async(req,res)=>{
     try{
     const FlightsData=await Flights.findAll({
         order: ['flight_name'],
@@ -32,7 +30,7 @@ router.get('/findFlights',async(req,res)=>{
         res.status(404).json({message:'please provide different origin/destination'})
     }
     const flightlist = FlightsData.map((flight)=>flight.get({plain:true}))
-    res.render('flights',{flightlist})
+    res.render('flightsList',{flightlist})
      res.status(200).json(FlightsData);
     }
     catch (err){
@@ -62,7 +60,7 @@ router.post('/FlightBooking',async(req,res)=>{
 });
 
 
-router.get('/BookedTickets',async(req,res)=>{
+router.get('/FlightBooking/:id',async(req,res)=>{
     const TicketNum = req.params.ticket_num;
 try{
     const ticketDetails=await Flights.findOne({

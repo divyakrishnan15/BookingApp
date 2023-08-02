@@ -1,15 +1,7 @@
 const sequelize = require("../config/connection")
-<<<<<<< HEAD
-const {User, HotelConfirmation} = require("../models")
-const {User, restaurantConfirmation} = require("../models")
-
-
-const hotelConfirmation = [
-=======
 const {User,HotelList, HotelConfirmation} = require("../models")
 
 const users = [
->>>>>>> 429b1fd9e3e17206821476314b7b8f48dd66e146
     {
         email: "Admin@gmail.com",
         password: "admin123"
@@ -20,29 +12,6 @@ const users = [
     },
 ]
 
-<<<<<<< HEAD
-const RestaurantConfirmation = [
-    {
-        "city": "Alberta",
-        "date": "2023-07-27",
-        "num_of_guests": 5,
-        "user_id":1
-    },
-    {
-		"city": "Vancouver",
-		"date": "2023-07-01",
-		"num_of_adults": 7,
-		"restaurant_name": "Hawksworth",
-		"reviews": 21,
-		"description": "inventive pacific northwest cuisine",
-		"first_name": "Divya",
-		"last_name": "Krishnan",
-		"email": "divya@gmail.com",
-		"phone_number": 417302894,
-		"user_id": 5
-	},
-]
-=======
 const Hotellist =[
         {
             "id": 1,
@@ -128,7 +97,6 @@ const Hotellist =[
 // ]
 
 
->>>>>>> 429b1fd9e3e17206821476314b7b8f48dd66e146
 
 const seedData = async ()=>{
     try{
@@ -136,13 +104,8 @@ const seedData = async ()=>{
         await User.bulkCreate(users,{
             individualHooks:true
         });
-<<<<<<< HEAD
-        await HotelConfirmation.bulkCreate(hotelConfirmation);
-        await restaurantConfirmation.bulkCreate(RestaurantConfirmation);
-=======
         await HotelList.bulkCreate(Hotellist);
         // await HotelConfirmation.bulkCreate(hotelConfirmation);
->>>>>>> 429b1fd9e3e17206821476314b7b8f48dd66e146
         process.exit(0);
     } catch(err){
         console.log(err)

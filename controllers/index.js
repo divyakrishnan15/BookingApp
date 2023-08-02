@@ -7,7 +7,7 @@ const restaurantRoutes = require('./restaurantRoutes')
 router.use('/',homeRoutes)
 router.use('/api',apiRoutes)
 router.use('/hotels',hotelRoutes)
-router.use('./restaurants',restaurantRoutes)
+router.use('/restaurants',restaurantRoutes)
 
 
 module.exports=router

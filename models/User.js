@@ -22,6 +22,17 @@ User.init(
       unique: true,
       validate: {
         isEmail: true,
+        async isUnique(email) { // custom validator function
+          try {
+            const user = await User.findOne({ where: { email } });
+            if (user) {
+              throw new Error('Email already in use');
+            }
+            return null;
+          } catch (error) {
+            throw new Error('Error checking email uniqueness');
+          }
+        },
       },
     },
     password: {
@@ -35,8 +46,12 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
+        try {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        } catch (error) {
+          throw new Error('Error hashing password');
+        }
       },
     },
     sequelize,
@@ -48,3 +63,5 @@ User.init(
 );
 
 module.exports = User;
+
+

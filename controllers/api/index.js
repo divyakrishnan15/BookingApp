@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const flightsRoutes=require('../api/flights')
+const flights=require('./flights')
 
-router.use('/flights',flightsRoutes)
+router.use('/flights',flights)
 
 
 

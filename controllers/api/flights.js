@@ -1,26 +1,39 @@
 const router=require('express').Router();
 const Flights=require('../../models/Flights');
-const FlightBooking =require('../../models/flightBooking');
+// const FlightBooking =require('../../models/flightBooking');
 
 
-router.get ('/',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try{
-        res.render('flights')
+       const flights= Flights.findAll({
+            attributes:["flight_name"]
+
+        });
+        if(!flights){
+                res.status(404).json({message:'No flights data found'})
+                return
+            }
+            console.log("hi")
+            res.status(200).json(flights);
+            
     }
     catch (err){
         // If an error occurs, send an error response
-        console.error('Error fetching the form:', err);
+        console.error('Error fetching flights:', err);
         res.status(500).json(err);
     }
-})
+    });
 
-router.post('/flightsList',async(req,res)=>{
+
+
+
+router.post('/',async(req,res)=>{
     try{
     const FlightsData=await Flights.findAll({
         order: ['flight_name'],
         where:{
-            Origin:req.body.origin,
-            Destination:req.body.destination
+            origin:req.body.origin,
+            destination:req.body.destination
         },
         attributes:{
          exclude:['is_hasStops']
@@ -29,8 +42,7 @@ router.post('/flightsList',async(req,res)=>{
     if(!FlightsData){
         res.status(404).json({message:'please provide different origin/destination'})
     }
-    const flightlist = FlightsData.map((flight)=>flight.get({plain:true}))
-    res.render('flightsList',{flightlist})
+
      res.status(200).json(FlightsData);
     }
     catch (err){
@@ -39,47 +51,59 @@ router.post('/flightsList',async(req,res)=>{
         res.status(500).json(err);
     }
     });
-    
-
-
-router.post('/FlightBooking',async(req,res)=>{
+  
+ //to book flight
+ router.get('/FlightBooking/:id'),async(req,res)=>{
     try{
+        res.render('ticketbooking')
+     }
+    catch (err){
+        // If an error occurs, send an error response
+         console.error('Error fetching the form:', err);
+         res.status(500).json(err);
+     }
+}
+ router.post('/FlightBooking/:id',async(req,res)=>{
+     try{
       const Bookingdata= await FlightBooking.create({
     Customer_name:req.body.Customer_name,
     gender: req.body.gender,
     DOB:req.body.DOB,
-    Phonenumber:req.body.Phonenumber,
+   Phonenumber:req.body.Phonenumber,
     Email:req.body.Email,
-    Class:req.body.Class    
+    Class:req.body.Class,
+     ticket_num:req.body.ticket_num
       })
       res.json({success:true,booking:Bookingdata});
     }
     catch(err){
-     res.status(500).json(err);
-    }
+      res.status(500).json(err);
+     }
 });
 
 
-router.get('/FlightBooking/:id',async(req,res)=>{
-    const TicketNum = req.params.ticket_num;
-try{
-    const ticketDetails=await Flights.findOne({
+ router.get('/FlightTicket',async(req,res)=>{
+    
+ try{
+     const ticketDetails=await Flights.create({
        
         include:{
             model:FlightBooking,
             attributes:['Customer_name','Phonenumber','Email','Class']
         },
         attributes:[
-            'flight_num', 'flight_name', 'start_time', 'end_time','price'
-        ]
-    })
-   if(!ticketDetails){
-    res.status(404).json({message:'No ticket exists'})
-   }
-   res.status(200).json(ticketDetails)
+            'flight_num', 'flight_name', 'origin','destination','start_time', 'end_time','price'
+         ]
+     })
+    if(!ticketDetails){
+     res.status(404).json({message:'No ticket exists'})
+    }
+  res.status(200).json(ticketDetails)
+ }
+ catch(err){
+   res.status(500).json(err)
 }
-catch(err){
-    res.status(500).json(err)
-}
-})
-module.exports=router;
+ })
+
+
+ module.exports=router;

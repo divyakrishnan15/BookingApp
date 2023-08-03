@@ -1,6 +1,8 @@
 const Flights=require('./Flights');
 const flightBooking=require('./flightBooking');
 
+
+
 Flights.hasMany(flightBooking,{
     foreignKey:'flight_num'
 })

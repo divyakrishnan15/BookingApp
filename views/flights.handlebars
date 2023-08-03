@@ -1,64 +1,74 @@
-
-<div class="container mx-auto py-8 " >
-  <div class="relative bg-image">
-  <img src="../public/css/assets/airport.jpg" alt="Background Image" class="w-full h-full object-cover opacity-50">
-  <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-    <h1 class="text-4xl font-bold text-white">Book Your Flight Today!!!!!</h1>
+<div class="container mx-auto py-8 ">
+  <div class="relative">
+    <img src="/assets/airport.jpg" alt="Background Image" class="w-full h-full object-cover">
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-white">Book Your Flight Today!!!!!</h1>
+    </div>
   </div>
-</div>
-                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                  <h2 class="text-2xl font-bold mb-4">Flight Booking Form</h2>
-                  <div class="mb-4">
-                    <label for="city" class="block text-gray-700 font-bold mb-2">Departure</label>
-                    <select id="Origincity" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
-                      <option value="" disabled selected>Select a city</option>
-                      <option value="Calgary,AB">Calgary,AB</option>
-                      <option value="Edmonton,AB">Edmonton,AB</option>
-                      <option value="Halifax,NS">Halifax,NS</option>
-                      <option value="Montreal,QC">Montreal,QC</option>
-                      <option value="Ottawa,ON<">Ottawa,ON</option>
-                      <option value="Quebec,QC">Quebec,QC</option>
-                      <option value="Toronto,ON">Toronto,ON</option>
-                      <option value="Vancouver,BC">Vancouver,BC</option>
-                      <option value="Windsor,ON">Windsor,ON</option>
-                      <option value="Winnipeg,MB">Winnipeg,MB</option>
-                    </select>
-                  </div>
-                   
-                  <div class="mb-4">
-                    <label for="city" class="block text-gray-700 font-bold mb-2">Destination</label>
-                    <select id="Dest_city" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
-                      <option value="" disabled selected>Select a city</option>
-                      <option value="Calgary,AB">Calgary,AB</option>
-                      <option value="Edmonton,AB">Edmonton,AB</option>
-                      <option value="Halifax,NS">Halifax,NS</option>
-                      <option value="Montreal,QC">Montreal,QC</option>
-                      <option value="Ottawa,ON">Ottawa,ON</option>
-                      <option value="Quebec,QC">Quebec,QC</option>
-                      <option value="Toronto,ON">Toronto,ON</option>
-                      <option value="Vancouver,BC">Vancouver,BC</option>
-                      <option value="Windsor,ON">Windsor,ON</option>
-                      <option value="Winnipeg,MB">Winnipeg,MB</option>
-                    </select>
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="departureDate">Departure Date</label>
-                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="departureDate" type="date">
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="returnDate">Return Date</label>
-                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="returnDate" type="date">
-                  </div>
-                  <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="passengerCount">Passenger Count</label>
-                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="passengerCount" type="number" min="1" max="10">
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <button id='searchBtn' class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                      Search Flights
-                    </button>
-                  </div>
-                </div>
-              </div>
+  <form class="search_flight">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 class="text-2xl font-bold mb-4">Flight Booking Form</h2>
+      <div class="mb-4">
+        <label for="city" class="block text-gray-700 font-bold mb-2">Departure</label>
+        <select id="Origincity" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
+          <option value="" disabled selected>Select a city</option>
+          <option value="Calgary,AB">Calgary,AB</option>
+          <option value="Edmonton,AB">Edmonton,AB</option>
+          <option value="Halifax,NS">Halifax,NS</option>
+          <option value="Montreal,QC">Montreal,QC</option>
+          <option value="Ottawa,ON<">Ottawa,ON</option>
+          <option value="Quebec,QC">Quebec,QC</option>
+          <option value="Toronto,ON">Toronto,ON</option>
+          <option value="Vancouver,BC">Vancouver,BC</option>
+          <option value="Windsor,ON">Windsor,ON</option>
+          <option value="Winnipeg,MB">Winnipeg,MB</option>
+        </select>
+      </div>
 
-  
+      <div class="mb-4">
+        <label for="city" class="block text-gray-700 font-bold mb-2">Destination</label>
+        <select id="Dest_city" name="city" class="block w-full bg-white border border-gray-300 rounded px-4 py-3">
+          <option value="" disabled selected>Select a city</option>
+          <option value="Calgary,AB">Calgary,AB</option>
+          <option value="Edmonton,AB">Edmonton,AB</option>
+          <option value="Halifax,NS">Halifax,NS</option>
+          <option value="Montreal,QC">Montreal,QC</option>
+          <option value="Ottawa,ON">Ottawa,ON</option>
+          <option value="Quebec,QC">Quebec,QC</option>
+          <option value="Toronto,ON">Toronto,ON</option>
+          <option value="Vancouver,BC">Vancouver,BC</option>
+          <option value="Windsor,ON">Windsor,ON</option>
+          <option value="Winnipeg,MB">Winnipeg,MB</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="departureDate">Departure Date</label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="departureDate" type="date">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="returnDate">Return Date</label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="returnDate" type="date">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="passengerCount">Passenger Count</label>
+        <input
+          class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="passengerCount" type="number" min="1" max="10">
+      </div>
+      <div class="flex items-center justify-center">
+        <button id='searchBtn'
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit">
+          Search Flights
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script src="/script/flightsearch.js"></script>

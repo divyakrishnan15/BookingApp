@@ -9,6 +9,11 @@ FlightBooking.init(
     flight_num:{
       type:DataTypes.STRING,
       primaryKey: true,
+      references:{
+        model: 'flights',
+        key: 'flight_num',
+
+      },
       allowNull: false,
     },
     Customer_name: {
@@ -43,6 +48,11 @@ FlightBooking.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    ticket_no:{
+      type:DataTypes.INTEGER,
+      allowNull:false,
+      unique:true
+    }
   },
   {
     sequelize,

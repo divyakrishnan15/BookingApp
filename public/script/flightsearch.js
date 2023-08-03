@@ -2,14 +2,13 @@ async function searchFlight(event){
     event.preventDefault();
 const origin=document.querySelector('#Origincity').value
 const destination=document.querySelector('#Dest_city').value
-const searchBtn = document.querySelector('#searchBtn')
-const searchFlights = document.querySelector('#displayFlights')
 
-const response= await fetch('api/findFlights',{
-    method:'GET',
+console.log('log before call')
+const response= await fetch('/api/flights/',{
+    method:'POST',
     body:JSON.stringify({
-        origin,
-        destination
+        "origin":origin,
+        "destination":destination
     }),
     headers:{
         'Content-Type': 'application/json',
@@ -17,7 +16,11 @@ const response= await fetch('api/findFlights',{
 })
 
 if(response.ok){
-    document.location.replace
+    document.location.replace('/flightsList');
+}
+else {
+    alert('Failed to search flights');
 }
 }
 
+document.querySelector('.search_flight').addEventListener('submit',searchFlight );

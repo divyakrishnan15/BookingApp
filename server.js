@@ -46,22 +46,9 @@ const sess = {
   //app.use(bodyParser.json()) ///post empty
   app.use(express.static(path.join(__dirname,'public')))
   app.use(routes);
-  
 
-
-
-
-
-
-  
-  
-  
-
-
-
-  
   sequelize.sync({force:false}).then(()=>{
       server.listen(PORT,()=>{
-        console.log(`*****Vacation Booking App listening on port http://localhost:${PORT} *****`)
+        console.log(`*****Vacation Booking App listening on port http://localhost:${PORT}/flights *****`)
       })
 })

@@ -44,36 +44,26 @@ The best way to find a summer getaway covering everything from Flights, Hotels, 
  
  ## Description :  
  <a name="Description"></a>
-Harnessing the powers of Tailwind for the UI, JAWS DB and Sequelize for the Database and Socket IO for the chat. This app has it all!
+User Story:
+As a customer I wanted a website where I can book flights, hotels, restaurant in a single app. Also, I should be able to chat with customer care/admin if I have any queries.
+Techincal description:
+Harnessing the powers of Tailwind for the UI, JAWS DB and Sequelize for the Database and Socket IO for the chat,stripe api for payment. This app has it all!
 
 
 ## Requirements:
 Use Node.js and Express.js to create a RESTful API.
-
 Use Handlebars.js as the template engine.
-
 Use MySQL and the Sequelize ORM for the database.
-
 Have both GET and POST routes for retrieving and adding new data.
-
 Use at least one new library, package, or technology that we haven’t discussed.
-
 Have a folder structure that meets the MVC paradigm.
-
 Include authentication (express-session and cookies).
-
 Protect API keys and sensitive information with environment variables.
-
 Be deployed using Heroku (with data).
-
 Have a polished UI.
-
 Be responsive.
-
 Be interactive (i.e., accept and respond to user input).
-
 Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
 Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 
@@ -85,7 +75,7 @@ Have a professional README (with unique name, description, technologies used, sc
  
     | Github Username  | **Email id** | **Github Repo link** | **Deployed Url** | **Contributor** |
     | --- | --- | --- | --- | --- |
-    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [BookingApp](https://github.com/divyakrishnan15/BookingApp/) | [BookingApp](https://divyakrishnan15.github.io/BookingApp/) | Divya Krishnan,Kato Cambly,Alekhya Vinni,Joshua Crawford,Peter Bhagoutie |
+    | [divyakrishnan15](https://github.com/divyakrishnan15) | divya@gmail.com | [BookingApp](https://github.com/divyakrishnan15/BookingApp/) | [BookingApp]([https://divyakrishnan15.github.io/BookingApp/](https://vacation-booking-app-426edb2cb493.herokuapp.com/)) | Divya Krishnan,Kato Cambly,Alekhya Vinni,Joshua Crawford,Peter Bhagoutie |
 
  ## Installation :  
  <a name="Installation"></a> 
